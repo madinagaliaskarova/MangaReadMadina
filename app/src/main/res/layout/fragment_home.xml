@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.fragments.home.HomeFragment">
+
+
+    <!--  MangaTabs  -->
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPagerManga"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="match_parent">
+
+    </androidx.viewpager2.widget.ViewPager2>
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:id="@+id/tab_layout_manga"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/page_margin_5x"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabGravity="center"
+        app:tabMaxWidth="200dp"
+        app:tabTextAppearance="@style/MyCustomTextAppearance"
+        app:tabTextColor="@color/black"
+        app:tabMinWidth="20dp"
+        app:tabIndicatorColor="#FFAD02E0"
+        android:layout_marginHorizontal="@dimen/page_margin"
+        app:tabIndicatorFullWidth="true"
+        app:tabPaddingStart="50dp"
+        android:visibility="gone"
+        app:tabIndicator="@drawable/tab_indicators_btm_stroke"
+        app:tabPaddingEnd="50dp"
+        app:tabIndicatorGravity="bottom"
+        app:tabIndicatorHeight="5dp"
+        app:tabMode="scrollable"
+        tools:ignore="SpeakableTextPresentCheck" >
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="match_parent"
+            android:text="@string/all_manga"
+            android:layout_height="wrap_content">
+        </com.google.android.material.tabs.TabItem>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="match_parent"
+            android:text="@string/top_hundred"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.tabs.TabItem>
+
+    </com.google.android.material.tabs.TabLayout>
+
+
+
+<!--Auth Tabs-->
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPagerAuth"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/tab_layout_auth"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </androidx.viewpager2.widget.ViewPager2>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:id="@+id/tab_layout_auth"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/page_margin_5x"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabGravity="center"
+        app:tabMaxWidth="200dp"
+        app:tabTextColor="@color/black"
+        app:tabPaddingStart="50dp"
+        android:visibility="visible"
+        app:tabIndicatorFullWidth="true"
+        app:tabIndicator="@drawable/tab_indicators_btm_stroke"
+        app:tabTextAppearance="@style/MyCustomTextAppearance"
+        app:tabIndicatorGravity="bottom"
+        app:tabIndicatorHeight="5dp"
+        app:tabMode="scrollable"
+        tools:ignore="SpeakableTextPresentCheck" >
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="match_parent"
+            android:text="@string/signin"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.tabs.TabItem>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="match_parent"
+            android:text="@string/registration"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.tabs.TabItem>
+
+    </com.google.android.material.tabs.TabLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

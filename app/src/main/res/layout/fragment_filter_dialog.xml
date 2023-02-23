@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".presentation.fragments.filters.FilterDialogFragment">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="310dp"
+        android:background="@drawable/divider_bg"
+        android:layout_height="?attr/actionBarSize">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            style="@style/BaseClickableText"
+            android:layout_gravity="end"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_close"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/BaseClickableText"
+                android:layout_marginEnd="@dimen/page_margin"
+                android:layout_marginTop="@dimen/element_margin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:drawableStartCompat="@drawable/ic_close" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/manga_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/filters"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"
+            android:textSize="@dimen/regular_txt_20" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/page_margin"
+        android:paddingBottom="@dimen/page_margin"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@string/genres"
+            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/page_margin"
+            android:textSize="20sp"
+            android:fontFamily="@font/montserrat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_gravity="center"
+            android:text="@string/all_genre"
+            android:textSize="@dimen/regular_txt_20"
+            android:fontFamily="@font/montserrat"
+            android:layout_marginStart="@dimen/big_margin_120"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/ic_toAllGenre"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:src="@drawable/ic_baseline_arrow_forward"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:contentDescription="TODO" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@string/types"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginStart="@dimen/page_margin"
+            android:fontFamily="@font/montserrat"
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="@dimen/page_margin"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/filter_rv"
+        tools:listitem="@layout/item_filter_rv"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_height="185dp"/>
+
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/element_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@string/year_dialog"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginStart="@dimen/page_margin"
+            android:layout_width="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="@string/hint_from_0"
+            app:endIconMode="clear_text"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/from_0_Layout"
+            android:layout_width="120dp"
+            android:layout_marginStart="@dimen/page_margin_25"
+            app:boxStrokeColor="#2FE09B"
+            app:hintTextColor="@color/light_green"
+            app:boxCornerRadiusTopStart="@dimen/element_margin"
+            app:boxCornerRadiusBottomEnd="@dimen/element_margin"
+            app:boxCornerRadiusBottomStart="@dimen/element_margin"
+            app:boxCornerRadiusTopEnd="@dimen/element_margin"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_from_0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            app:layout_constraintStart_toEndOf="@+id/from_0_Layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/line"
+            app:layout_constraintEnd_toStartOf="@+id/to_2022_Layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="TODO" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="@string/hint_to_2022"
+            app:endIconMode="clear_text"
+           app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/to_2022_Layout"
+            android:layout_width="120dp"
+            android:layout_marginEnd="@dimen/page_margin_25"
+            app:boxStrokeColor="#2FE09B"
+            app:hintTextColor="#2FE09B"
+            app:boxCornerRadiusTopStart="@dimen/element_margin"
+            app:boxCornerRadiusBottomEnd="@dimen/element_margin"
+            app:boxCornerRadiusBottomStart="@dimen/element_margin"
+            app:boxCornerRadiusTopEnd="@dimen/element_margin"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_to_2022"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:paddingBottom="@dimen/page_margin"
+        android:layout_marginTop="@dimen/page_margin_25"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_drop_filter"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_bg"
+            android:fontFamily="sans-serif-light"
+            android:padding="@dimen/small_margin_2x"
+            android:layout_marginStart="@dimen/page_margin_25"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/drop"
+            android:textAllCaps="true"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/small_text_14"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_accept_filter"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primary"
+            android:layout_marginEnd="@dimen/page_margin_25"
+            android:padding="14dp"
+            app:cornerRadius="@dimen/small_margin_10"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/accept"
+            android:textAllCaps="true"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/white"
+            android:textSize="@dimen/small_text_13"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

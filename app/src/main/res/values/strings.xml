@@ -1,0 +1,50 @@
+<resources>
+
+    <string name="app_name">MangaRead</string>
+    <string name="title_home">Главная</string>
+    <string name="title_profile">Профиль</string>
+    <string name="register">У вас еще нет аккаунта? <b> Регистрация</b> </string>
+    <string name="enter">У вас уже есть аккаунта? <b> Войти</b> </string>
+    <string name="auth_enter">вход</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="password">Password</string>
+    <string name="nickname">Nickname</string>
+    <string name="username">Username</string>
+    <string name="registration">Регистрация</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="signin">Вход</string>
+    <string name="all_manga">Вся манга</string>
+    <string name="top_hundred">Топ 100</string>
+    <string name="enterin">Войти</string>
+    <string name="manga_name">Название Манги</string>
+    <string name="filters">Фильтры</string>
+    <string name="genres">Жанры</string>
+    <string name="add_comment">Добавить</string>
+    <string name="more_text_product">ЧИТАТЬ ДАЛЕЕ</string>
+    <string name="types">Тип</string>
+    <string name="all_genre">все</string>
+    <string name="hint_from_0"><font>От 0</font></string>
+    <string name="hint_to_2022"><font>До 2022</font></string>
+    <string name="drop">Сбросить</string>
+    <string name="accept">Применить</string>
+    <string name="add_photo">Добавить фото</string>
+    <string name="information">Информация</string>
+    <string name="comments">Отзывы</string>
+    <string name="item_txt_2000">Год: 2000</string>
+    <string name="anime_name">Название аниме Оно может ...</string>
+    <string name="manga">Манга</string>
+    <string name="darlene_robertson">Darlene Robertson</string>
+    <string name="empty">пусто</string>
+    <string name="product_type">Тип:</string>
+    <string name="product_genre">Жанр:</string>
+    <string name="synopsis">Синопсис</string>
+    <string name="ur_text_hint">Ваш текст</string>
+    <string name="no_internet_connection">No Internet Connection</string>
+    <string name="year_dialog">Год</string>
+    <string name="likes">Нравится:</string>
+    <string name="rating_txt">Рейтинг:</string>
+    <string name="created_at">Создано в:</string>
+    <string name="toast_success">Добро пожаловать name</string>
+
+</resources>

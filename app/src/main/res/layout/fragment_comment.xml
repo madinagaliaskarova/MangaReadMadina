@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".presentation.fragments.comments.CommentFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_marginTop="@dimen/page_margin_2x"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_back"
+                style="@style/BaseClickableText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_back_bg"
+                android:padding="@dimen/medium_margin"
+                android:paddingTop="@dimen/element_margin"
+                android:clickable="true"
+                android:focusable="true"
+                app:drawableStartCompat="@drawable/ic_arrow_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/manga_name"
+            android:textColor="@color/black"
+            style="@style/BaseMainTextView"
+            android:textSize="@dimen/regular_txt_25"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/comments"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/comment_rv"
+        android:orientation="vertical"
+        tools:listitem="@layout/item_comments_rv"
+        android:layout_marginHorizontal="@dimen/small_margin_10"
+        android:layout_marginBottom="@dimen/page_margin_4x"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:layout_height="0dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_add_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="@dimen/page_margin_4x"
+        android:gravity="left|top|bottom"
+        android:fontFamily="@font/montserrat"
+        android:minHeight="66dp"
+        android:text="@string/add_comment"
+        android:visibility="visible"
+        app:cornerRadius="@dimen/small_margin_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textAllCaps="true"
+        android:textColor="@color/primary"
+        android:textSize="16sp"
+        android:backgroundTint="@color/white"
+        tools:ignore="RtlHardcoded" />
+
+    <LinearLayout
+        android:id="@+id/add_comment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="350dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:layout_marginBottom="@dimen/big_height_90"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="@string/ur_text_hint"
+            android:layout_marginStart="@dimen/page_margin"
+            app:endIconMode="clear_text"
+            android:id="@+id/userLayout"
+            android:layout_width="@dimen/big_margin_220"
+            app:boxStrokeColor="@color/primary"
+            app:boxCornerRadiusTopStart="@dimen/element_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:boxCornerRadiusBottomEnd="@dimen/element_margin"
+            android:background="#99DDBEE6"
+            app:hintTextColor="@color/primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:boxCornerRadiusBottomStart="@dimen/element_margin"
+            app:boxCornerRadiusTopEnd="@dimen/element_margin"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_add_btn"
+            style="@style/BaseClickableText"
+            android:layout_width="60dp"
+            android:layout_height="39dp"
+            android:background="@drawable/btn_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingStart="@dimen/medium_margin"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/big_margin"
+            android:paddingTop="@dimen/element_margin"
+            app:drawableStartCompat="@drawable/ic_send"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

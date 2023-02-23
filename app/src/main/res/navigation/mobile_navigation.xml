@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/fragment_home">
+
+    <fragment
+        android:id="@+id/fragment_home"
+        android:name="com.example.mangaread.presentation.fragments.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/fragment_profile"
+        android:name="com.example.mangaread.presentation.fragments.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/signinFragment"
+        android:name="com.example.mangaread.presentation.fragments.auth.sign_in.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" />
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.example.mangaread.presentation.fragments.auth.sign_up.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" />
+    <fragment
+        android:id="@+id/boardFragment"
+        android:name="com.example.mangaread.presentation.fragments.board.BoardFragment"
+        android:label="fragment_board"
+        tools:layout="@layout/fragment_board" />
+    <fragment
+        android:id="@+id/commentFragment"
+        android:name="com.example.mangaread.presentation.fragments.comments.CommentFragment"
+        android:label="fragment_comment"
+        tools:layout="@layout/fragment_comment" />
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.example.mangaread.presentation.fragments.product_detail.ProductDetailFragment"
+        android:label="fragment_product"
+        tools:layout="@layout/fragment_product_detail" >
+        <action
+            android:id="@+id/action_productDetailFragment_to_commentFragment"
+            app:destination="@id/commentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allMangaFragment"
+        android:name="com.example.mangaread.presentation.fragments.home.allmanga.AllMangaFragment"
+        android:label="fragment_all_manga"
+        tools:layout="@layout/fragment_all_manga" >
+        <action
+            android:id="@+id/action_allMangaFragment_to_productDetailFragment2"
+            app:destination="@id/productDetailFragment">
+            <argument
+                android:name="itemId"
+                app:argType="integer"
+                app:nullable="false"
+                />
+        </action>
+        <argument
+            android:name="ItemId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/topHundredFragment"
+        android:name="com.example.mangaread.presentation.fragments.home.tophundred.TopHundredFragment"
+        android:label="fragment_top_hundred"
+        tools:layout="@layout/fragment_top_hundred" />
+    <dialog
+        android:id="@+id/filterDialogFragment"
+        android:name="com.example.mangaread.presentation.fragments.filters.FilterDialogFragment"
+        android:label="fragment_filter_dialog"
+        tools:layout="@layout/fragment_filter_dialog" />
+    <dialog
+        android:id="@+id/genreDialogFragment"
+        android:name="com.example.mangaread.presentation.fragments.filters.genre.GenreDialogFragment"
+        android:label="fragment_genre_dialog"
+        tools:layout="@layout/fragment_genre_dialog" />
+
+</navigation>

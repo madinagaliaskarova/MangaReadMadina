@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.fragments.auth.sign_in.SignInFragment">
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="@string/username"
+        android:layout_marginHorizontal="@dimen/page_margin"
+        app:endIconMode="clear_text"
+        android:id="@+id/userLayout"
+        android:layout_marginTop="@dimen/big_margin"
+        android:layout_width="match_parent"
+        app:boxStrokeColor="@color/primary"
+        app:boxCornerRadiusTopStart="@dimen/element_margin"
+        app:boxCornerRadiusBottomEnd="@dimen/element_margin"
+        app:hintTextColor="@color/primary"
+        app:boxCornerRadiusBottomStart="@dimen/element_margin"
+        app:boxCornerRadiusTopEnd="@dimen/element_margin"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/usernameEd"
+            android:minEms="8"
+            android:maxLength="50"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="@string/password"
+        app:layout_constraintTop_toBottomOf="@+id/userLayout"
+        app:endIconMode="clear_text"
+        app:boxStrokeColor="@color/primary"
+        app:boxCornerRadiusTopStart="@dimen/element_margin"
+        app:boxCornerRadiusBottomEnd="@dimen/element_margin"
+        app:hintTextColor="@color/primary"
+        app:boxCornerRadiusBottomStart="@dimen/element_margin"
+        app:boxCornerRadiusTopEnd="@dimen/element_margin"
+        android:layout_marginTop="@dimen/page_margin"
+        android:layout_marginHorizontal="@dimen/page_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordEd"
+            android:inputType="textPassword"
+            android:maxLength="50"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:text="@string/auth_enter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="@dimen/regular_txt_18"
+        android:id="@+id/btn_enter"
+        android:layout_marginBottom="@dimen/big_margin_135"
+        android:layout_marginHorizontal="@dimen/page_margin"
+        android:layout_width="match_parent"
+        app:cornerRadius="@dimen/small_margin_2x"
+        android:backgroundTint="@color/primary"
+        android:textAllCaps="true"
+        android:fontFamily="@font/montserrat"
+        android:padding="@dimen/norm_btn_pad"
+        android:layout_height="wrap_content"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/toRegister"
+        app:layout_constraintTop_toBottomOf="@+id/btn_enter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/btn_enter"
+        android:layout_margin="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_enter"
+        android:fontFamily="sans-serif-medium"
+        android:padding="@dimen/norm_btn_pad"
+        android:text="@string/register"
+        android:textColor="#918C8C"
+        android:textSize="14sp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
